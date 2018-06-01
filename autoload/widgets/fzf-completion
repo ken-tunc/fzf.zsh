@@ -2,10 +2,6 @@
 
 local tokens cmd prefix trigger tail matches lbuf d_cmds fallback
 setopt localoptions noshwordsplit noksh_arrays noposixbuiltins
-autoload -Uz _fzf_path_completion _fzf_dir_completion
-for func in $(echo ${^fpath}/_fzf_complete*(N)); do
-  autoload -Uz $(basename "$func")
-done
 
 # http://zsh.sourceforge.net/FAQ/zshfaq03.html
 # http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags
