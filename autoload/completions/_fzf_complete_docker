@@ -1,5 +1,3 @@
-# vim:set et sw=2 ts=8 ft=zsh:
-
 # based on https://github.com/kwhrtsk/docker-fzf-completion
 
  local tokens docker_command

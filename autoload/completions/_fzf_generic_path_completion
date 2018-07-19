@@ -1,5 +1,3 @@
-# vim:set et sw=2 ts=8 ft=zsh:
-
 local base lbuf compgen fzf_opts suffix tail dir leftover matches
 # (Q) flag removes a quoting level: "foo\ bar" => "foo bar"
 base=${(Q)1}

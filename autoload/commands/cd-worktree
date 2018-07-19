@@ -1,5 +1,3 @@
-# vim:set et sw=2 ts=8 ft=zsh:
-
 if ! command -v fzf >/dev/null 2>&1; then
   echo "fzf not installed" 1>&2
   return 1

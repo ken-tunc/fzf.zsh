@@ -1,5 +1,3 @@
-# vim:set et sw=2 ts=8 ft=zsh:
-
 local selected num
 setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
 selected=( $(fc -rl 1 | fzf-tmux --height 40% -n2..,.. --tiebreak=index \

@@ -1,5 +1,3 @@
-# vim:set et sw=2 ts=8 ft=zsh:
-
 local tokens cmd prefix trigger tail matches lbuf d_cmds fallback
 setopt localoptions noshwordsplit noksh_arrays noposixbuiltins
 

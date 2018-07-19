@@ -1,5 +1,3 @@
-# vim:set et sw=2 ts=8 ft=zsh:
-
 local cmd
 if command -v fd >/dev/null 2>&1; then
   cmd="command fd --type file --follow --hidden --no-ignore-vcs . 2> /dev/null"
