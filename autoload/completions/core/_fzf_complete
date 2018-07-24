@@ -20,7 +20,7 @@ else
 fi
 
 _fzf_feed_fifo "$fifo"
-matches=$(cat "$fifo" | fzf-tmux --height 40% --reverse ${=fzf_opts} -q "${(Q)prefix}" | $post | tr '\n' ' ')
+matches=$(cat "$fifo" | $(__fzf_cmd) "$FZF_DEFAULT_OPTS" --reverse ${=fzf_opts} -q "${(Q)prefix}" | $post | tr '\n' ' ')
 if [ -n "$matches" ]; then
   LBUFFER="$lbuf$matches"
 fi

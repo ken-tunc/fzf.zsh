@@ -10,7 +10,7 @@ else
 fi
 
 setopt localoptions pipefail 2> /dev/null
-local dir="$(eval "$cmd" | fzf-tmux +m --reverse --height 40%)"
+local dir="$(eval "$cmd" | $(__fzf_cmd) "$FZF_DEFAULT_OPTS" +m --reverse)"
 if [[ -z "$dir" ]]; then
   zle redisplay
   return 0

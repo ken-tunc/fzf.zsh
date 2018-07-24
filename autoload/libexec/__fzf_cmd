@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+local cmd
+
+if [[ -n $TMUX_PANE ]] && [[ $LINES > 15 ]]; then
+  cmd="fzf-tmux"
+else
+  cmd="fzf"
+fi
+
+echo "$cmd"

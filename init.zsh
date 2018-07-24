@@ -1,4 +1,5 @@
 export FZF_ZSH_ROOT=$0:a:h:q
+export FZF_DEFAULT_OPTS='--height=40%'
 
 : "Autoload commands, completions and functions" && () {
   local autoload_dir file widget

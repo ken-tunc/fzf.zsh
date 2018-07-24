@@ -11,7 +11,7 @@ else
 fi
 
 setopt localoptions pipefail 2> /dev/null
-eval "$cmd | fzf-tmux --reverse --height 40% -m" | while read item; do
+eval "$cmd | $(__fzf_cmd) "$FZF_DEFAULT_OPTS" --reverse -m" | while read item; do
   LBUFFER+="$(echo -n "${(q)item} ")"
 done
 local ret=$?

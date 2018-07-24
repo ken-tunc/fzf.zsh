@@ -18,7 +18,7 @@ while [ 1 ]; do
     [ -z "$dir" ] && dir='.'
     [ "$dir" != "/" ] && dir="${dir/%\//}"
     dir=${~dir}
-    matches=$(eval "$compgen $(printf %q "$dir")" | fzf-tmux --height 40% --reverse ${=fzf_opts} -q "$leftover" | while read item; do
+    matches=$(eval "$compgen $(printf %q "$dir")" | $(__fzf_cmd) "$FZF_DEFAULT_OPTS" --reverse ${=fzf_opts} -q "$leftover" | while read item; do
       echo -n "${(q)item}$suffix "
     done)
     matches=${matches% }
