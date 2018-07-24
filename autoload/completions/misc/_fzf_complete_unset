@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 _fzf_complete '-m' "$@" < <(
   declare -xp | sed 's/=.*//' | sed 's/.* //'
 )

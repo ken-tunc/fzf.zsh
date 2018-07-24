@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 _fzf_complete '+m' "$@" < <(
   alias | sed 's/=.*//'
 )

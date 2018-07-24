@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 local tokens cmd prefix trigger tail matches lbuf d_cmds fallback
 setopt localoptions noshwordsplit noksh_arrays noposixbuiltins
 

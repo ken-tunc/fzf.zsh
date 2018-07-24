@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 autoload -Uz chpwd_recent_filehandler
 local -a reply
 chpwd_recent_filehandler $reply

@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 _fzf_complete '+m' "$@" < <(
   command grep -v '^\s*\(#\|$\)' /etc/hosts | command grep -Fv '0.0.0.0' |
       awk '{if (length($2) > 0) {print $2}}' | sort -u

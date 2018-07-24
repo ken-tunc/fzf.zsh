@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 local cmd
 if command -v fd >/dev/null 2>&1; then
   cmd="command fd --type directory --follow --hidden --no-ignore-vcs . 2> /dev/null"

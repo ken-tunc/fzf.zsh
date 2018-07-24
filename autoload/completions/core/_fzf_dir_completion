@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 if ! declare -f _fzf_compgen_dir > /dev/null; then
   _fzf_compgen_dir() {
     if command -v fd >/dev/null 2>&1; then
