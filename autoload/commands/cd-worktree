@@ -11,7 +11,7 @@ if ! git rev-parse >/dev/null 2>&1; then
 fi
 
 local cmd="command git worktree list 2>/dev/null"
-local dir="$(eval "$cmd" | $(__fzf_cmd) "$FZF_DEFAULT_OPTS" +m --reverse | awk '{print $1}')"
+local dir="$(eval "$cmd" | $(__fzf_cmd) +m --reverse | awk '{print $1}')"
 if [[ -z "$dir" ]]; then
   return 1
 fi
