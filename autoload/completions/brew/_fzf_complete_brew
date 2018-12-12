@@ -1,0 +1,43 @@
+#!/bin/zsh
+
+local tokens brew_command preview
+setopt localoptions noshwordsplit noksh_arrays noposixbuiltins
+
+tokens=(${(z)LBUFFER})
+if [[ ${#tokens} < 3 ]]; then
+    _fzf_complete_brew_list_commands "$@"
+    return
+fi
+
+brew_command=${tokens[2]}
+
+if [[ "$brew_command" = "cask" ]] && [[ ${#tokens} > 3 ]]; then
+  local cask_command
+  cask_command=${tokens[3]}
+
+  case "$cask_command" in
+    home|info|install)
+      _fzf_complete_brew_cask_search "$@"
+      return
+    ;;
+    upgrade|uninstall|reinstall)
+      _fzf_complete_brew_cask_list "$@"
+      return
+    ;;
+  esac
+fi
+
+case "$brew_command" in
+  home|info|install)
+    _fzf_complete_brew_search_formula "$@"
+    return
+  ;;
+  upgrade|uninstall|reinstall)
+    _fzf_complete_brew_list_installed "$@"
+    return
+  ;;
+  help)
+    _fzf_complete_brew_list_commands "$@"
+    return
+  ;;
+esac

@@ -1,0 +1,9 @@
+local matches
+
+matches=$(brew search --casks | $(__fzf_cmd) --height=50% --min-height=15 \
+          --reverse --preview 'brew cask info {}' --preview-window down:5:wrap -m)
+if [[ -n "$matches" ]]; then
+  LBUFFER="$1$matches"
+fi
+zle redisplay
+typeset -f zle-line-init >/dev/null && zle zle-line-init

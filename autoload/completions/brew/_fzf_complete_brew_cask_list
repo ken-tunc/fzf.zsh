@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+_fzf_complete "-m" "$@" < <(
+  brew cask list
+)
